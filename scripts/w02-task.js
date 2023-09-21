@@ -20,12 +20,12 @@ imageElement.src = profilePicture;
 imageElement.alt = `Profile image of ${fullName}`;
 
 /* Step 5 - Array */
-const arrayVariable = ['Fried Chicken', 'Baked Chicken', 'Roasted Chicken', 'Barbequed Chicken', 'Smoked Chicken', 'Grilled Chicken'];
-foodElement.innerText = arrayVariable;
+const anArrayOfFavoriteFoods = ['Fried Chicken', 'Baked Chicken', 'Roasted Chicken', 'Barbequed Chicken', 'Smoked Chicken', 'Grilled Chicken'];
+foodElement.innerText = anArrayOfFavoriteFoods;
 let newFood = 'Chicken Curry';
-arrayVariable.push(newFood);
-foodElement.innerHTML += `<br>${arrayVariable}`;
-arrayVariable.shift();
-foodElement.innerHTML += `<br>${arrayVariable}`;
-arrayVariable.pop()
-foodElement.innerHTML += `<br>${arrayVariable}`;
+anArrayOfFavoriteFoods.push(newFood);
+foodElement.innerHTML += `<br>${anArrayOfFavoriteFoods}`;
+anArrayOfFavoriteFoods.shift();
+foodElement.innerHTML += `<br>${anArrayOfFavoriteFoods}`;
+anArrayOfFavoriteFoods.pop()
+foodElement.innerHTML += `<br>${anArrayOfFavoriteFoods}`;
