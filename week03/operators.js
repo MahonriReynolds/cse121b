@@ -56,4 +56,5 @@ function reloadShip() {
 }
 
 
-console.log(shipCanFire())
+// console.log(shipCanFire())
+encounter();
