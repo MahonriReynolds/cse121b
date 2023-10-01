@@ -21,7 +21,7 @@ imageElement.alt = `Profile image of ${fullName}`;
 
 /* Step 5 - Array */
 const anArrayOfFavoriteFoods = ['Fried Chicken', 'Baked Chicken', 'Roasted Chicken', 'Barbequed Chicken', 'Smoked Chicken', 'Grilled Chicken'];
-foodElement.innerText = anArrayOfFavoriteFoods;
+foodElement.innerText = `${anArrayOfFavoriteFoods}`;
 let newFood = 'Chicken Curry';
 anArrayOfFavoriteFoods.push(newFood);
 foodElement.innerHTML += `<br>${anArrayOfFavoriteFoods}`;
