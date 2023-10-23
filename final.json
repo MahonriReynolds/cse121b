@@ -1,0 +1,438 @@
+{
+  "ls": {
+    "params": [
+      {
+        "param": "-l, --long",
+        "description": "List in long format (include details like permissions, owner, group, size, and modification time).",
+        "example": "ls -l"
+      },
+      {
+        "param": "-a, --all",
+        "description": "List all entries, including hidden files.",
+        "example": "ls -a"
+      },
+      {
+        "param": "-h, --human-readable",
+        "description": "Print sizes in human-readable format (e.g., 1K, 2M, 3G).",
+        "example": "ls -lh"
+      }
+    ],
+    "description": "List files and directories in the current directory."
+  },
+  "pwd": {
+    "params": [],
+    "description": "Print the current working directory."
+  },
+  "cd": {
+    "params": [
+      {
+        "param": "directory",
+        "description": "Change to the specified directory.",
+        "example": "cd /path/to/directory"
+      }
+    ],
+    "description": "Change the current directory."
+  },
+  "mkdir": {
+    "params": [
+      {
+        "param": "directory",
+        "description": "Create a new directory with the given name.",
+        "example": "mkdir new_directory"
+      }
+    ],
+    "description": "Create a new directory."
+  },
+  "rmdir": {
+    "params": [
+      {
+        "param": "directory",
+        "description": "Remove an empty directory.",
+        "example": "rmdir empty_directory"
+      }
+    ],
+    "description": "Remove an empty directory."
+  },
+  "rm": {
+    "params": [
+      {
+        "param": "file",
+        "description": "Remove the specified file.",
+        "example": "rm file.txt"
+      },
+      {
+        "param": "-r, --recursive",
+        "description": "Remove directories and their contents recursively.",
+        "example": "rm -r directory/"
+      },
+      {
+        "param": "-f, --force",
+        "description": "Force removal without prompting for confirmation.",
+        "example": "rm -f file.txt"
+      }
+    ],
+    "description": "Remove files or directories."
+  },
+  "cp": {
+    "params": [
+      {
+        "param": "source",
+        "description": "Source file or directory to copy.",
+        "example": "cp source.txt destination/"
+      },
+      {
+        "param": "destination",
+        "description": "Destination directory or file name.",
+        "example": "cp source.txt destination/"
+      },
+      {
+        "param": "-r, --recursive",
+        "description": "Copy directories and their contents recursively.",
+        "example": "cp -r sourcedir/ destdir/"
+      }
+    ],
+    "description": "Copy files and directories."
+  },
+  "mv": {
+    "params": [
+      {
+        "param": "source",
+        "description": "Source file or directory to move.",
+        "example": "mv source.txt destination/"
+      },
+      {
+        "param": "destination",
+        "description": "Destination directory or file name.",
+        "example": "mv source.txt destination/"
+      }
+    ],
+    "description": "Move or rename files and directories."
+  },
+  "touch": {
+    "params": [
+      {
+        "param": "filename",
+        "description": "Create an empty file with the specified name.",
+        "example": "touch newfile.txt"
+      }
+    ],
+    "description": "Create an empty file."
+  },
+  "apt-get": {
+    "params": [
+      {
+        "param": "install package",
+        "description": "Install a package from the repository.",
+        "example": "apt-get install package_name"
+      },
+      {
+        "param": "update",
+        "description": "Update package lists from repositories.",
+        "example": "apt-get update"
+      },
+      {
+        "param": "remove package",
+        "description": "Remove a package from the system.",
+        "example": "apt-get remove package_name"
+      }
+    ],
+    "description": "Package management tool for installing, updating, and removing software packages."
+  },
+  "top": {
+    "params": [],
+    "description": "Monitor system processes in real-time."
+  },
+  "kill": {
+    "params": [
+      {
+        "param": "process_id",
+        "description": "Terminate a process by its process ID (PID).",
+        "example": "kill 1234"
+      },
+      {
+        "param": "-9",
+        "description": "Forcefully terminate a process.",
+        "example": "kill -9 1234"
+      }
+    ],
+    "description": "Terminate processes."
+  },
+  "ifconfig": {
+    "params": [],
+    "description": "Network configuration and information."
+  },
+  "ping": {
+    "params": [
+      {
+        "param": "hostname",
+        "description": "Test network connectivity to a remote host by sending ICMP echo requests.",
+        "example": "ping google.com"
+      },
+      {
+        "param": "-c count",
+        "description": "Specify the number of packets to send before stopping.",
+        "example": "ping -c 5 google.com"
+      }
+    ],
+    "description": "Test network connectivity to a remote host."
+  },
+  "ssh": {
+    "params": [
+      {
+        "param": "user@hostname",
+        "description": "Securely connect to a remote server using SSH.",
+        "example": "ssh user@hostname"
+      },
+      {
+        "param": "-p port",
+        "description": "Specify the SSH port to connect to (default is 22).",
+        "example": "ssh -p 2222 user@hostname"
+      },
+      {
+        "param": "-i keyfile",
+        "description": "Use an identity file (private key) for authentication.",
+        "example": "ssh -i ~/.ssh/mykey user@hostname"
+      }
+    ],
+    "description": "Securely connect to remote servers."
+  },
+  "scp": {
+    "params": [
+      {
+        "param": "file user@hostname:destination",
+        "description": "Securely copy files between local and remote systems using SCP.",
+        "example": "scp file.txt user@hostname:/path/to/destination"
+      },
+      {
+        "param": "-r",
+        "description": "Copy directories and their contents recursively.",
+        "example": "scp -r sourcedir/ user@hostname:/path/to/destination"
+      }
+    ],
+    "description": "Securely copy files between local and remote systems."
+  },
+  "tar": {
+    "params": [
+      {
+        "param": "-czvf archive.tar.gz file1 file2",
+        "description": "Create a compressed tar archive of specified files.",
+        "example": "tar -czvf archive.tar.gz file1 file2"
+      },
+      {
+        "param": "-xvzf archive.tar.gz",
+        "description": "Extract files from a compressed tar archive.",
+        "example": "tar -xvzf archive.tar.gz"
+      },
+      {
+        "param": "-tf archive.tar.gz",
+        "description": "List the contents of a tar archive.",
+        "example": "tar -tf archive.tar.gz"
+      }
+    ],
+    "description": "Archive and compress files and directories."
+  },
+  "useradd": {
+    "params": [
+      {
+        "param": "username",
+        "description": "Create a new user with the specified username.",
+        "example": "useradd newuser"
+      },
+      {
+        "param": "-m, --create-home",
+        "description": "Create a home directory for the new user.",
+        "example": "useradd -m newuser"
+      },
+      {
+        "param": "-G groups",
+        "description": "Add the new user to additional groups (comma-separated).",
+        "example": "useradd -G group1,group2 newuser"
+      }
+    ],
+    "description": "Create a new user."
+  },
+  "userdel": {
+    "params": [
+      {
+        "param": "username",
+        "description": "Delete a user account and related files.",
+        "example": "userdel olduser"
+      },
+      {
+        "param": "-r, --remove",
+        "description": "Remove the user's home directory and mail spool.",
+        "example": "userdel -r olduser"
+      }
+    ],
+    "description": "Delete a user."
+  },
+  "passwd": {
+    "params": [
+      {
+        "param": "username",
+        "description": "Change the password for the specified user.",
+        "example": "passwd username"
+      },
+      {
+        "param": "-l, --lock",
+        "description": "Lock the user's password (disable the account).",
+        "example": "passwd -l username"
+      }
+    ],
+    "description": "Change user passwords."
+  },
+  "sudo": {
+    "params": [
+      {
+        "param": "command",
+        "description": "Execute a command with superuser (root) privileges.",
+        "example": "sudo command"
+      },
+      {
+        "param": "-u user",
+        "description": "Run the command as another user.",
+        "example": "sudo -u otheruser command"
+      }
+    ],
+    "description": "Execute commands with superuser privileges."
+  },
+  "reboot": {
+    "params": [
+      {
+        "param": "reboot",
+        "description": "Reboot the system.",
+        "example": "reboot"
+      }
+    ],
+    "description": "Reboot the system."
+  },
+  "chmod": {
+    "params": [
+      {
+        "param": "permissions file",
+        "description": "Change file permissions (e.g., chmod 755 file).",
+        "example": "chmod 755 myfile.txt"
+      },
+      {
+        "param": "-R, --recursive",
+        "description": "Change permissions recursively for directories and their contents.",
+        "example": "chmod -R 644 mydir"
+      }
+    ],
+    "description": "Change file and directory permissions."
+  },
+  "chown": {
+    "params": [
+      {
+        "param": "owner:group file",
+        "description": "Change the owner and group of a file (e.g., chown user:group file).",
+        "example": "chown john:staff myfile.txt"
+      },
+      {
+        "param": "-R, --recursive",
+        "description": "Change ownership recursively for directories and their contents.",
+        "example": "chown -R alice:users mydir"
+      }
+    ],
+    "description": "Change file and directory ownership."
+  },
+  "ps": {
+    "params": [
+      {
+        "param": "aux",
+        "description": "Display a list of running processes with detailed information.",
+        "example": "ps aux"
+      },
+      {
+        "param": "ef",
+        "description": "Display a tree of processes, showing parent-child relationships.",
+        "example": "ps ef"
+      }
+    ],
+    "description": "List currently running processes."
+  },
+  "free": {
+    "params": [
+      {
+        "param": "-h, --human",
+        "description": "Display memory usage in human-readable format (e.g., 2.5G).",
+        "example": "free -h"
+      }
+    ],
+    "description": "Display system memory usage."
+  },
+  "date": {
+    "params": [
+      {
+        "param": "+%Y-%m-%d %H:%M:%S",
+        "description": "Display the date and time in a custom format.",
+        "example": "date +%Y-%m-%d %H:M:S"
+      },
+      {
+        "param": "-s, --set",
+        "description": "Set the system date and time (requires superuser privileges).",
+        "example": "sudo date -s '2023-10-23 14:30:00'"
+      }
+    ],
+    "description": "Display or set the system date and time."
+  },
+  "grep": {
+    "params": [
+      {
+        "param": "pattern file",
+        "description": "Search for a specific text pattern in a file.",
+        "example": "grep 'search_text' file.txt"
+      },
+      {
+        "param": "-r, --recursive",
+        "description": "Recursively search for a pattern in files within directories.",
+        "example": "grep -r 'search_text' directory/"
+      },
+      {
+        "param": "-i, --ignore-case",
+        "description": "Perform a case-insensitive search.",
+        "example": "grep -i 'search_text' file.txt"
+      }
+    ],
+    "description": "Search for text patterns in files."
+  },
+  "find": {
+    "params": [
+      {
+        "param": "directory -name filename",
+        "description": "Search for files with a specific name within a directory.",
+        "example": "find /path/to/search -name file.txt"
+      },
+      {
+        "param": "directory -type d",
+        "description": "Find and list directories within a specific directory.",
+        "example": "find /path/to/search -type d"
+      },
+      {
+        "param": "directory -type f",
+        "description": "Find and list files within a specific directory.",
+        "example": "find /path/to/search -type f"
+      }
+    ],
+    "description": "Search for files and directories."
+  },
+  "du": {
+    "params": [
+      {
+        "param": "-sh",
+        "description": "Display a summary of disk usage for a directory in a human-readable format.",
+        "example": "du -sh /path/to/directory"
+      },
+      {
+        "param": "-ah",
+        "description": "Display disk usage for all files and directories, including hidden ones.",
+        "example": "du -ah /path/to/directory"
+      }
+    ],
+    "description": "Display disk usage of files and directories."
+  },
+  "history": {
+    "params": [],
+    "description": "Display a list of previously executed commands."
+  }
+}
