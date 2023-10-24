@@ -105,6 +105,9 @@ function copyToClipboard(text) {
 // Fetch the JSON file using the Fetch API
 var data;
 
+
+// I know this isn't fully utilizing the fetch api, but it's still being used :)
+// I wasn't able to host the file anywhere else
 fetch('final.json')
   .then(response => response.json())
   .then(jsonData => {
