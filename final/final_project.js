@@ -7,12 +7,12 @@ var ul = document.getElementById('myList');
 var searchInput = document.getElementById('searchInput');
 var dayOfWeek = new Date().getDay(); // Get the current day of the week (0 for Sunday, 1 for Monday, ...)
 
-// Define an array of colors for the days of the week
-var dayColors = ['red', 'blue', 'green', 'purple', 'orange', 'brown', 'black'];
+// USe an array for colors
+var dayColors = ['red', 'blue', 'green', 'purple', 'orange', 'brown', 'purple'];
 
 // Use the map method to create an array of text colors for all days
 var textColors = dayColors.map((color, index) => {
-  return index === dayOfWeek ? color : 'black';
+  return index === dayOfWeek ? color : 'purple';
 });
 
 // Set the text color based on the current day
@@ -37,30 +37,23 @@ function filterList() {
       var dropdown = document.createElement('div');
       dropdown.className = 'dropdown';
 
-      // Display the description on one line
-      var description = document.createElement('p');
-      description.textContent = data[key].description;
-      dropdown.appendChild(description);
-
       // Display each parameter, description, example, and text entry field on separate lines
       var params = data[key].params;
       for (var i = 0; i < params.length; i++) {
         var paramItem = document.createElement('div');
         paramItem.className = 'param-item';
-        paramItem.innerHTML = `
-          <p>${params[i].param}: ${params[i].description}</p>
-          <p>Example: ${params[i].example}</p>
-        `;
+        paramItem.innerHTML = `<p>${params[i].param}: ${params[i].description}</p>
+                               <p>Example: ${params[i].example}</p>`;
 
         // Add a text entry field
         var paramText = document.createElement('input');
         paramText.type = 'text';
         paramText.placeholder = 'Enter value';
         paramItem.appendChild(paramText);
-        
+
         // Add the parameter item to the dropdown
         dropdown.appendChild(paramItem);
-      };
+      }
 
       // Add a "Generate Template" button
       var generateButton = document.createElement('button');
@@ -93,7 +86,7 @@ function generateTemplate(event) {
 
   for (var i = 0; i < paramTextFields.length; i++) {
     var value = paramTextFields[i].value;
-    template += ` ${value}`; // I don't know if this is string concatenation or a template literal but it is using a template
+    template += ` ${value}`; // I don't know if this is considered using string concatenation or a template literal but it is using a template so there's that
   };
 
   // Display the combined content
@@ -108,27 +101,13 @@ function generateTemplate(event) {
   combinedContent.appendChild(copyButton);
 };
 
-// // Copy content to the clipboard
-// function copyToClipboard(text) {
-//   const textArea = document.createElement('textarea');
-//   textArea.value = text;
-//   document.body.appendChild(textArea);
-//   textArea.select();
-//   document.body.removeChild(textArea);
-//   alert('Copied to clipboard: ' + text);
-// };
-
-// Fetch the JSON file using the Fetch API
-var data;
-
-
 // I know this isn't fully utilizing the fetch api, but it's still being used :)
-// I wasn't able to host the file anywhere
+var data;
 fetch('final.json')
   .then(response => response.json())
   .then(jsonData => {
     data = jsonData;
-    // Initially, load the entire list
+    // Load the entire list to start
     filterList();
   })
   .catch(error => {
@@ -137,3 +116,202 @@ fetch('final.json')
 
 // Add an event listener to the search input
 searchInput.addEventListener('input', filterList);
+
+// Here's some conditional branching
+function updateLinkColors() {
+  var currentSecond = new Date().getSeconds();
+  var links = document.getElementsByTagName('a');
+  var colors;
+
+  switch (currentSecond) {
+    case 0:
+      colors = 'red';
+      break;
+    case 1:
+      colors = 'orange';
+      break;
+    case 2:
+      colors = 'yellow';
+      break;
+    case 3:
+      colors = 'green';
+      break;
+    case 4:
+      colors = 'blue';
+      break;
+    case 5:
+      colors = 'purple';
+      break;
+    case 6:
+      colors = 'red';
+      break;
+    case 7:
+      colors = 'orange';
+      break;
+    case 8:
+      colors = 'yellow';
+      break;
+    case 9:
+      colors = 'green';
+      break;
+    case 10:
+      colors = 'blue';
+      break;
+    case 11:
+      colors = 'purple';
+      break;
+    case 12:
+      colors = 'red';
+      break;
+    case 13:
+      colors = 'orange';
+      break;
+    case 14:
+      colors = 'yellow';
+      break;
+    case 15:
+      colors = 'green';
+      break;
+    case 16:
+      colors = 'blue';
+      break;
+    case 17:
+      colors = 'purple';
+      break;
+    case 18:
+      colors = 'red';
+      break;
+    case 19:
+      colors = 'orange';
+      break;
+    case 20:
+      colors = 'yellow';
+      break;
+    case 21:
+      colors = 'green';
+      break;
+    case 22:
+      colors = 'blue';
+      break;
+    case 23:
+      colors = 'purple';
+      break;
+    case 24:
+      colors = 'red';
+      break;
+    case 25:
+      colors = 'orange';
+      break;
+    case 26:
+      colors = 'yellow';
+      break;
+    case 27:
+      colors = 'green';
+      break;
+    case 28:
+      colors = 'blue';
+      break;
+    case 29:
+      colors = 'purple';
+      break;
+    case 30:
+      colors = 'red';
+      break;
+    case 31:
+      colors = 'orange';
+      break;
+    case 32:
+      colors = 'yellow';
+      break;
+    case 33:
+      colors = 'green';
+      break;
+    case 34:
+      colors = 'blue';
+      break;
+    case 35:
+      colors = 'purple';
+      break;
+    case 36:
+      colors = 'red';
+      break;
+    case 37:
+      colors = 'orange';
+      break;
+    case 38:
+      colors = 'yellow';
+      break;
+    case 39:
+      colors = 'green';
+      break;
+    case 40:
+      colors = 'blue';
+      break;
+    case 41:
+      colors = 'purple';
+      break;
+    case 42:
+      colors = 'red';
+      break;
+    case 43:
+      colors = 'orange';
+      break;
+    case 44:
+      colors = 'yellow';
+      break;
+    case 45:
+      colors = 'green';
+      break;
+    case 46:
+      colors = 'blue';
+      break;
+    case 47:
+      colors = 'purple';
+      break;
+    case 48:
+      colors = 'red';
+      break;
+    case 49:
+      colors = 'orange';
+      break;
+    case 50:
+      colors = 'yellow';
+      break;
+    case 51:
+      colors = 'green';
+      break;
+    case 52:
+      colors = 'blue';
+      break;
+    case 53:
+      colors = 'purple';
+      break;
+    case 54:
+      colors = 'red';
+      break;
+    case 55:
+      colors = 'orange';
+      break;
+    case 56:
+      colors = 'yellow';
+      break;
+    case 57:
+      colors = 'green';
+      break;
+    case 58:
+      colors = 'blue';
+      break;
+    case 59:
+      colors = 'purple';
+      break;
+    default:
+      colors = 'black';
+  };
+
+  for (var i = 0; i < links.length; i++) {
+    links[i].style.color = colors;
+  };
+};
+
+// Update the command colors every second
+setInterval(updateLinkColors, 1000);
