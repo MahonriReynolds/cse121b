@@ -1,6 +1,22 @@
+
+// Import copyToClipboard fron final_import.js
+import { copyToClipboard } from './final_import.js';
+
 // Get the ul element by its id
 var ul = document.getElementById('myList');
 var searchInput = document.getElementById('searchInput');
+var dayOfWeek = new Date().getDay(); // Get the current day of the week (0 for Sunday, 1 for Monday, ...)
+
+// Define an array of colors for the days of the week
+var dayColors = ['red', 'blue', 'green', 'purple', 'orange', 'brown', 'black'];
+
+// Use the map method to create an array of text colors for all days
+var textColors = dayColors.map((color, index) => {
+  return index === dayOfWeek ? color : 'black';
+});
+
+// Set the text color based on the current day
+document.body.style.color = textColors[dayOfWeek];
 
 // Define a function to filter the list based on user input
 function filterList() {
@@ -77,7 +93,7 @@ function generateTemplate(event) {
 
   for (var i = 0; i < paramTextFields.length; i++) {
     var value = paramTextFields[i].value;
-    template += ` ${value}`;
+    template += ` ${value}`; // I don't know if this is string concatenation or a template literal but it is using a template
   };
 
   // Display the combined content
@@ -92,22 +108,22 @@ function generateTemplate(event) {
   combinedContent.appendChild(copyButton);
 };
 
-// Copy content to the clipboard
-function copyToClipboard(text) {
-  const textArea = document.createElement('textarea');
-  textArea.value = text;
-  document.body.appendChild(textArea);
-  textArea.select();
-  document.body.removeChild(textArea);
-  alert('Copied to clipboard: ' + text);
-};
+// // Copy content to the clipboard
+// function copyToClipboard(text) {
+//   const textArea = document.createElement('textarea');
+//   textArea.value = text;
+//   document.body.appendChild(textArea);
+//   textArea.select();
+//   document.body.removeChild(textArea);
+//   alert('Copied to clipboard: ' + text);
+// };
 
 // Fetch the JSON file using the Fetch API
 var data;
 
 
 // I know this isn't fully utilizing the fetch api, but it's still being used :)
-// I wasn't able to host the file anywhere else
+// I wasn't able to host the file anywhere
 fetch('final.json')
   .then(response => response.json())
   .then(jsonData => {
