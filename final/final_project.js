@@ -103,7 +103,7 @@ function generateTemplate(event) {
 
 // I know this isn't fully utilizing the fetch api, but it's still being used :)
 var data;
-fetch('https://mahonrireynolds.github.io/cse121b/final/final.json')
+fetch('final/final.json')
   .then(response => response.json())
   .then(jsonData => {
     data = jsonData;
